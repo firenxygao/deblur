@@ -1,6 +1,11 @@
 # Dynamic Scene Deblurring with Parameter Selective Sharing and Nested Skip Connections
 by Hongyun Gao, Xin Tao, Xiaoyong Shen, Jiaya Jia. Please refer to the [paper](http://jiaya.me/papers/deblur_cvpr19.pdf) for the details.
 
+### Some results on the GoPro testing dataset by our model trained on default dataset
+<img src="./imgs/comp_gopro.png" width="100%">
+
+### Some results on real cases by our model trained on mixing datasets
+<img src="./imgs/comp_real.png" width="100%">
 
 ## Prerequisites
 - Python2.7 or Python3.6
@@ -24,7 +29,7 @@ If GPU is available, you can use `--gpu` argument and add the gpu id to enable G
 python run_model.py --gpu=0
 ```
 
-We provided 2 models for testing. The first model is trained on default data released by the paper \`\`Deep Multi-scale Convolutional Neural Network for Dynamic Scene Deblurring''. The second model is trained by mixing default data with our own generated data. You can use `--model` argument to choose between `default` or `alldata`.
+We provided 2 models for testing. The first model is trained on default data released by the paper \`\`Deep Multi-scale Convolutional Neural Network for Dynamic Scene Deblurring''. The second model is trained by mixing default data with our own generated data, which shows better performance than the first model. You can use `--model` argument to choose between `default` or `alldata`.
 Our 2 models and data can be downloaded by the links. [Models](https://www.dropbox.com/s/rcdz2fsob3jkhdq/checkpoints.zip?dl=0). [Dataset](https://www.dropbox.com/s/0jq86y7fa01awgl/data.tar?dl=0).
 
 ```bash
@@ -47,7 +52,6 @@ According to our experience, a 720\*1280 image will take 9GB memory. Users can a
 ```bash
 python run_model.py --max_height=720 --max_width=1280
 ```
-
 
 ## Reference
 If you find our released models useful, please consider citing: 
