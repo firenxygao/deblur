@@ -29,8 +29,8 @@ If GPU is available, you can use `--gpu` argument and add the gpu id to enable G
 python run_model.py --gpu=0
 ```
 
-We provided 2 models for testing. The first model is trained on default data released by the paper \`\`Deep Multi-scale Convolutional Neural Network for Dynamic Scene Deblurring''. The second model is trained by mixing default data with our own generated data, which shows better performance than the first model. You can use `--model` argument to choose between `default` or `alldata`.
-Our 2 models and data can be downloaded by the links. [Models](https://www.dropbox.com/s/rcdz2fsob3jkhdq/checkpoints.zip?dl=0). [Dataset](https://www.dropbox.com/s/0jq86y7fa01awgl/data.tar?dl=0).
+We provide 2 models for testing. The first model is trained on default data released by the paper ''Deep Multi-scale Convolutional Neural Network for Dynamic Scene Deblurring''. The second model is trained by mixing default data with our own generated data, which shows better performance than the first model. You can use `--model` argument to choose between `default` or `alldata`.
+Our generated data can be downloaded by the links. [Dataset](https://www.dropbox.com/s/0jq86y7fa01awgl/data.tar?dl=0).
 
 ```bash
 python run_model.py --model=default
@@ -47,14 +47,14 @@ To test the model, the height and width of the input tensor should be pre-define
 In our implementation, we first check the image dimension. If the height is larger than the width, we transpose the image such that the width is larger than the height. Then we check whether image can be fit into the placeholder pre-defined by `max_height` and `max_width`. Otherwise, the images will be downsampled by the largest scale factor to 
 be fed into the placeholder. And results will be upsampled to the original size.
 
-According to our experience, a 720\*1280 image will take 9GB memory. Users can adjust `max_height` and `max_width` according to the memory conditions.
+According to our experience, a 720\*1280 image will take 9GB memory. Users can adjust `max_height` and `max_width` to satisfy memory conditions.
 
 ```bash
 python run_model.py --max_height=720 --max_width=1280
 ```
 
 ## Reference
-If you find our released models useful, please consider citing: 
+If you find our released models or dataset useful, please consider citing: 
 
 ```bibtex
 @inproceedings{gao2019dynamic,
