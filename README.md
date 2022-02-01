@@ -32,7 +32,7 @@ python run_model.py --gpu=0
 ```
 
 We provide 2 models for testing. The first model is trained on default data released by the paper ''Deep Multi-scale Convolutional Neural Network for Dynamic Scene Deblurring''. The second model is trained by mixing default data with our own generated data, which shows better performance than the first model. You can use `--model` argument to choose between `default` or `alldata`.
-Our generated data can be downloaded by the links. [Dataset](https://www.dropbox.com/s/0jq86y7fa01awgl/data.tar?dl=0).
+Our generated data can be downloaded by the links. [Dataset](https://drive.google.com/file/d/18__gfWalgOHA2vVUPGiCjLaR6UaRMSLv/view?usp=sharing).
 
 ```bash
 python run_model.py --model=default
